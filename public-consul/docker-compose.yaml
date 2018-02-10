@@ -15,3 +15,4 @@ services:
     network_mode: service:consul
     stdin_open: true
     tty: true
+    command: [ "/bin/bash", "-c", "while true; do echo Keep alive; sleep 1; done;" ]
