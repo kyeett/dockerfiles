@@ -1,0 +1,12 @@
+version: '3'
+services:
+  consul:
+    image: consul
+    command: agent -server -bootstrap-expect=1 -ui -bind=$CONSUL_IP
+    ports:
+      - 8500:8500
+  curler:
+    image: tutum/curl
+    depends_on:
+      - consul
+    network_mode: service:consul

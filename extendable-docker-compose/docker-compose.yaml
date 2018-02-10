@@ -1,0 +1,9 @@
+version: '3'
+services:
+  flasker:
+    image: tigrlily/flask-trial
+  curler:
+    image: tutum/curl
+    network_mode: service:flasker
+    stdin_open: true
+    tty: true
