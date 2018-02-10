@@ -1,0 +1,17 @@
+version: '3'
+services:
+  consul:
+    image: consul
+    command: agent -bootstrap-expect=1 -server -ui -client 0.0.0.0
+    ports:
+      - "8500:8500"
+      - "8600:8600"
+    expose:
+      - "8300"
+  curler:
+    image: tutum/curl
+    depends_on:
+      - consul
+    network_mode: service:consul
+    stdin_open: true
+    tty: true
