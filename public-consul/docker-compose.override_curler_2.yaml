@@ -1,0 +1,11 @@
+# Usage docker-compose -f docker-compose.yaml -f docker-compose.overrider.yaml up
+version: '3'
+services:
+  curler_2:
+    image: ubuntu
+    depends_on:
+      - consul
+    network_mode: service:consul
+    stdin_open: true
+    tty: true
+    command: [ "/bin/bash", "-c", "while true; do echo Works; sleep 1; done;" ]

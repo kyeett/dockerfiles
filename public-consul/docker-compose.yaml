@@ -15,4 +15,13 @@ services:
     network_mode: service:consul
     stdin_open: true
     tty: true
-    command: [ "/bin/bash", "-c", "while true; do echo Keep alive; sleep 1; done;" ]
+    command: [ "/bin/bash", "-c", "while true; do echo Override 1; sleep 1; done;" ]
+
+  curler_2:
+    image: tutum/curl
+    depends_on:
+      - consul
+    network_mode: service:consul
+    stdin_open: true
+    tty: true
+    command: [ "/bin/bash", "-c", "while true; do echo Override 2; sleep 1; done;" ]
