@@ -1,0 +1,11 @@
+# Usage docker-compose -f docker-compose.yaml -f docker-compose.override_consul.yaml up
+version: '3'
+services:
+  consul:
+    image: consul
+    command: agent -retry-join=$CONSUL_SERVER_ADDR -data-dir /consul/data -client 0.0.0.0
+    ports:
+      - "8500:8500"
+      - "8600:8600"
+    expose:
+      - "8300"
