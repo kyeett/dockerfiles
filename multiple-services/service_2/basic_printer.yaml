@@ -1,0 +1,5 @@
+version: '3'
+services:
+  service_2:
+    image: ubuntu
+    command: [ "/bin/bash", "-c", "while true; do echo This should be overwritten; sleep 1; done;" ]

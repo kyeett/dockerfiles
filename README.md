@@ -7,8 +7,8 @@
 | ------------- |-------------|
 | share-localhost | share localhost between dockerfiles, accessible at localhost:8500 |
 | public-consul | Consul accessible from host or inside dockers at localhost:8500 |
-| public-consul.overrider | Overrides curler_2. Usage:<br>`docker-compose -f docker-compose.yaml -f docker-compose.override_curler_2.yaml up`
- |
+| public-consul.overrider | Overrides curler_2. Usage:<br>`docker-compose -f docker-compose.yaml -f docker-compose.override_curler_2.yaml up` |
+ | [multiple-services](./multiple-services) | An example of how to structure docker-compose files |
 
 
 ## Useful stuff

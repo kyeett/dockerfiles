@@ -1,0 +1,10 @@
+version: '3'
+services:
+  service_1:
+    image: tutum/curl
+    depends_on:
+      - consul
+    network_mode: service:consul
+    stdin_open: true
+    tty: true
+    command: [ "/bin/bash", "-c", "while true; do echo Service that depends on consul; sleep 1; done;" ]
